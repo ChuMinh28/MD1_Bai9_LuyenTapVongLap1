@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="hello"></h1>
+<script>
+    let hello = 1
+    let goodbye = 100
+    function stop() {
+        if(hello<goodbye){
+            document.getElementById('hello').innerText = hello;
+            hello++
+            setTimeout(stop,100)
+        }else{
+            alert('Finish')
+        }
+    }
+    stop();
+</script>
+</body>
+</html>

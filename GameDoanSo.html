@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>ĐOÁN SỐ</h1>
+    <h2>Nhập vào 1 số từ 1 đến 10</h2>
+    <button id="play" onclick="play()">Play</button>
+    <input type="number" id="num">
+    <h3 id="haha" style="color: crimson"></h3>
+    <h3 id="hehe"></h3>
+</div>
+<script>
+    let count = 0;
+    function play() {
+        count++;
+        let input = +document.getElementById('num').value;
+        let ran = Math.floor(Math.random() * 10 + 1)
+        if (count < 4) {
+            if (input === ran) {
+                document.getElementById('haha').innerHTML = 'Số này nè: '+ran
+                document.getElementById('hehe').innerHTML = 'WIN'
+            } else {
+                document.getElementById('haha').innerHTML = 'Số này nè: '+ran
+                document.getElementById('hehe').innerHTML = 'Lượt chơi còn: '+(3- count)
+            }
+        } else {
+            document.getElementById('haha').innerHTML = 'Số này nè: '+ran
+            document.getElementById('hehe').innerHTML = 'Game Over'
+        }
+    }
+</script>
+</body>
+</html>
